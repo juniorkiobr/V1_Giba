@@ -25,7 +25,8 @@ Contas:.
   contas.sacar(index) - Saca da respectiva conta bancária,
   contas.transferir(index, indexD) - Tranfere dinheiro de uma conta bancaria para outra,
   contas.remove(index) - Remove a conta bancária da tabela Contas,
-  constas.atualizarLista(index) - Atualiza a indexação da tabela Clientes,
+  contas.atualizarLista(index) - Atualiza a indexação da tabela Clientes,
+  contas.defLimite(index) - Define o limite de uma conta,
   contas.disconnect() - Encerra a conexão com o banco de dados,
 
 Historico:.
