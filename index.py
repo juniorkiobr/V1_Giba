@@ -153,13 +153,13 @@ class Conta():
         self.disconnect()
     def deposita(self,index):
         self.init()
-        valor = int(input('Digite o valor para depositar:. '))
+        valor = float(input('Digite o valor para depositar:. '))
         self.df = self.df._set_value(index, 'Saldo', int(self.df._get_value(index, 'Saldo'))+valor)
         historico.adicionar(self.df._get_value(index, 'HistoricoID'),('Depositado R$ '+str(valor)))
         self.disconnect()
     def sacar(self,index):
         self.init()
-        valor = int(input('Digite o valor para sacar:. '))
+        valor = float(input('Digite o valor para sacar:. '))
         if(int(self.df._get_value(index, 'Saldo'))-valor >= int(self.df._get_value(index, 'Limite'))):
             self.df = self.df._set_value(index, 'Saldo', int(self.df._get_value(index, 'Saldo'))-valor)
             historico.adicionar(self.df._get_value(index, 'HistoricoID'),('Sacado R$ '+str(valor)))
@@ -168,7 +168,7 @@ class Conta():
         self.disconnect()
     def transferir(self,index,indexD):
         self.init()
-        valor = int(input('Digite o valor para transferir:. '))
+        valor = float(input('Digite o valor para transferir:. '))
         try:
             if(int(self.df._get_value(index, 'Saldo'))-valor >= int(self.df._get_value(index, 'Limite'))):
                 self.df = self.df._set_value(index, 'Saldo', int(self.df._get_value(index, 'Saldo'))-valor)
